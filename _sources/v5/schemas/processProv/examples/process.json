@@ -1,0 +1,17 @@
+{
+  "id": "echo",
+  "title": "Echo",
+  "description": "Echoes the submitted message.",
+  "version": "1.0.0",
+  "jobControlOptions": ["sync-execute", "async-execute"],
+  "inputs": {
+    "message": {
+      "schema": {"type": "string"}
+    }
+  },
+  "outputs": {
+    "output": {
+      "schema": {"type": "string"}
+    }
+  }
+}

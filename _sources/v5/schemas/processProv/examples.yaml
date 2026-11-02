@@ -1,0 +1,6 @@
+$schema: https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/refs/heads/master/ogc/bblocks/schemas/examples.schema.yaml
+examples:
+  - title: Process description interpreted as a PROV process entity
+    snippets:
+      - language: json
+        ref: examples/process.json

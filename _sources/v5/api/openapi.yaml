@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: "OGC API - Processes - Part 5: Provenance"
+  version: 1.0.0
+  description: |-
+    API definition of the job provenance endpoint of OGC API - Processes - Part 5: Provenance.
+    The endpoint returns the PROV provenance of a successful job, negotiated by the `Accept` header,
+    the `f` query parameter or by profile.
+  contact:
+    name: "Open Geospatial Consortium (OGC)"
+    email: standards-team@ogc.org
+    url: 'https://www.ogc.org/contacts'
+  license:
+    name: OGC license
+    url: "http://www.ogc.org/legal/"
+paths:
+  /jobs/{jobId}/prov:
+    get:
+      summary: retrieve the provenance of a job
+      description: >-
+        Returns the PROV provenance of a successful job.
+        The default representation is PROV-JSON (`application/provenance+json`).
+        A job that did not succeed, or without recorded provenance, yields a `prov-missing` exception.
+        An unsupported negotiated format yields a `prov-unsupported-format` exception.
+      operationId: getJobProvenance
+      tags:
+        - Provenance
+      parameters:
+        - $ref: "bblocks://ogc.api.processes.v1.parameters.jobId"
+        - name: f
+          in: query
+          required: false
+          description: Provenance format, as an alternative to the `Accept` header.
+          schema:
+            type: string
+            enum: [json, jsonld, xml, provn, nt, ttl]
+      responses:
+        200:
+          description: The provenance of the job.
+          content:
+            application/provenance+json:
+              schema:
+                $ref: "bblocks://ogc.api.processes.v5.provenance.job-prov-json"
+            application/json:
+              schema:
+                $ref: "bblocks://ogc.api.processes.v5.provenance.job-prov-json"
+            application/ld+json:
+              schema:
+                type: object
+            application/provenance+xml:
+              schema:
+                type: string
+            text/provenance-notation:
+              schema:
+                type: string
+            application/n-triples:
+              schema:
+                type: string
+            text/turtle:
+              schema:
+                type: string
+        404:
+          description: The job does not exist or has no provenance.
+          content:
+            application/json:
+              schema:
+                $ref: "bblocks://ogc.api.processes.v5.responses.provMissing"
+        406:
+          description: The requested provenance format is not supported.
+          content:
+            application/json:
+              schema:
+                $ref: "bblocks://ogc.api.processes.v5.responses.provUnsupportedFormat"
+        500:
+          $ref: "bblocks://ogc.api.processes.v1.responses.ServerError"

@@ -1,0 +1,18 @@
+{
+  "jobID": "6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10",
+  "processID": "echo",
+  "type": "process",
+  "status": "successful",
+  "created": "2026-01-15T16:46:09Z",
+  "started": "2026-01-15T16:46:10Z",
+  "finished": "2026-01-15T16:46:13Z",
+  "updated": "2026-01-15T16:46:13Z",
+  "links": [
+    {
+      "href": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/prov",
+      "rel": "https://www.w3.org/ns/prov",
+      "type": "application/provenance+json",
+      "title": "Job provenance"
+    }
+  ]
+}

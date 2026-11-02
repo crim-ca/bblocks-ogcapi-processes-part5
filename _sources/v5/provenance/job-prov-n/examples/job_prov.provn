@@ -1,0 +1,44 @@
+document
+  prefix wfprov <http://purl.org/wf4ever/wfprov#>
+  prefix wfdesc <http://purl.org/wf4ever/wfdesc#>
+  prefix wf4ever <http://purl.org/wf4ever/wf4ever#>
+  prefix dct <http://purl.org/dc/terms/>
+  prefix foaf <http://xmlns.com/foaf/0.1/>
+  prefix ex <https://example.com/ogcapi/>
+  prefix job <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/>
+  prefix proc <https://example.com/ogcapi/processes/>
+  prefix input <https://example.com/ogcapi/processes/echo/inputs/>
+  prefix output <https://example.com/ogcapi/processes/echo/outputs/>
+  prefix profile <https://example.com/def/profile/>
+  
+  agent(ex:agents/alice, [prov:type='prov:Person', prov:label="Alice (user agent that submitted the job)"])
+  agent(ex:agents/server, [prov:type='prov:SoftwareAgent', prov:label="Example OGC API - Processes server"])
+  agent(ex:agents/engine, [prov:type='prov:SoftwareAgent', prov:type='wfprov:WorkflowEngine', prov:label="Example workflow engine"])
+  actedOnBehalfOf(ex:agents/server, ex:agents/alice, -)
+  actedOnBehalfOf(ex:agents/engine, ex:agents/server, -)
+  entity(profile:raster, [prov:role="http://www.opengis.net/def/glossary/term/Raster"])
+  entity(profile:raster-cog, [prov:role="http://www.opengis.net/def/glossary/term/Raster"])
+  specializationOf(profile:raster-cog, profile:raster)
+  entity(proc:echo, [prov:type='wfdesc:Process', prov:label="Process Description", prov:location="https://example.com/ogcapi/processes/echo", dct:conformsTo='profile:raster'])
+  entity(profile:status, [prov:role="http://www.opengis.net/def/glossary/term/Status"])
+  entity(job:status, [prov:label="Job Status", prov:location="https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10", dct:conformsTo='profile:status'])
+  wasAttributedTo(job:status, ex:agents/alice)
+  activity(job:run, -, -, [prov:type='wfprov:ProcessRun', prov:label="Execution of the echo process"])
+  wasInfluencedBy(job:status, job:run)
+  wasAssociatedWith(job:run, ex:agents/engine, proc:echo)
+  wasAssociatedWith(job:run, ex:agents/alice, -)
+  wasStartedBy(job:run, job:status, -, 2026-01-15T16:46:10+00:00)
+  entity(job:inputs/message, [prov:label="Input 'message'", prov:value="hello", prov:type='wfprov:Artifact'])
+  used(job:run, job:inputs/message, -, [prov:role='input:message'])
+  entity(job:inputs/image, [prov:label="Input 'image'", prov:location="https://example.com/data/image.tif", prov:type='wfprov:Artifact', prov:type='wf4ever:File', dct:conformsTo='profile:raster'])
+  used(job:run, job:inputs/image, -, [prov:role='input:image'])
+  entity(job:results/output, [prov:label="Result 'output'", prov:location="https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output", prov:type='wfprov:Artifact', prov:type='wf4ever:File', dct:conformsTo='profile:raster-cog'])
+  wasGeneratedBy(job:results/output, job:run, 2026-01-15T16:46:12+00:00, [prov:role='output:output'])
+  entity(job:results/images, [prov:label="Result 'images'", prov:type='wfprov:Artifact', prov:type='prov:Collection'])
+  wasGeneratedBy(job:results/images, job:run, 2026-01-15T16:46:12+00:00, [prov:role='output:images'])
+  entity(job:results/images/0, [prov:label="Result 'images' item 0", prov:location="https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0", prov:type='wfprov:Artifact', prov:type='wf4ever:File'])
+  hadMember(job:results/images, job:results/images/0)
+  entity(job:results/images/1, [prov:label="Result 'images' item 1", prov:location="https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1", prov:type='wfprov:Artifact', prov:type='wf4ever:File'])
+  hadMember(job:results/images, job:results/images/1)
+  wasEndedBy(job:run, job:results/output, -, 2026-01-15T16:46:13+00:00)
+endDocument

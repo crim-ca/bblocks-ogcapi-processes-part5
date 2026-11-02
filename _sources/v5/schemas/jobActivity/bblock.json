@@ -1,0 +1,25 @@
+{
+  "name": "Job status as PROV job activity",
+  "abstract": "Part 1 status info with a JSON-LD context mapping its timing to the Part 5 PROV job activity.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-02T00:00:00Z",
+  "dateOfLastChange": "2026-11-02",
+  "itemClass": "schema",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "isProfileOf": [
+    "bblocks://ogc.api.processes.v1.schemas.statusInfo",
+    "bblocks://ogc.api.processes.v5.provenance.prov-activity"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.api.processes.v1.schemas.statusInfo",
+    "bblocks://ogc.api.processes.v5.provenance.prov-activity"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": ["ogc", "processes", "provenance", "prov", "job", "activity", "part5"]
+}

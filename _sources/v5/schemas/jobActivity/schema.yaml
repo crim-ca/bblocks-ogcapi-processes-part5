@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Job status as PROV job activity
+description: >-
+  Part 1 status info, interpreted as the PROV job activity of the Part 5 job provenance.
+allOf:
+  - $ref: bblocks://ogc.api.processes.v1.schemas.statusInfo

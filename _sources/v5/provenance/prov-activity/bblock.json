@@ -1,0 +1,18 @@
+{
+  "name": "W3C PROV Activity",
+  "abstract": "Plain W3C PROV-O Activity concept, profiled by the Part 5 specializations of the Part 1 concepts.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-11-02T00:00:00Z",
+  "dateOfLastChange": "2026-11-02",
+  "itemClass": "model",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "isProfileOf": ["bblocks://ogc.ogc-utils.prov.w3c-prov-base"],
+  "sources": [
+    {
+      "title": "PROV-O: The PROV Ontology",
+      "link": "https://www.w3.org/TR/prov-o/#Activity"
+    }
+  ],
+  "tags": ["prov", "activity", "part5"]
+}

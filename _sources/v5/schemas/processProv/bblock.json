@@ -1,0 +1,25 @@
+{
+  "name": "Process description as PROV process entity",
+  "abstract": "Part 1 process description with a JSON-LD context mapping it to the Part 5 PROV process entity (wfdesc:Process).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-05-01",
+  "itemClass": "schema",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "isProfileOf": [
+    "bblocks://ogc.api.processes.v1.schemas.process",
+    "bblocks://ogc.api.processes.v5.provenance.prov-entity"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.api.processes.v1.schemas.process",
+    "bblocks://ogc.api.processes.v5.provenance.prov-entity"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": ["ogc", "processes", "provenance", "prov", "process", "part5"]
+}

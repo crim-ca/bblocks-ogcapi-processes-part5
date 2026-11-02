@@ -1,0 +1,27 @@
+{
+  "name": "Provenance Missing Response",
+  "abstract": "404 response when the job provenance is not available (prov-missing exception)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-05-01",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "dependsOn": [
+    "bblocks://ogc.api.processes.v1.schemas.exception"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "response",
+    "part5",
+    "exception",
+    "404"
+  ],
+  "itemClass": "response"
+}

@@ -1,0 +1,345 @@
+{
+  "@context": [
+    {
+      "wfprov": "http://purl.org/wf4ever/wfprov#",
+      "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+      "wf4ever": "http://purl.org/wf4ever/wf4ever#",
+      "dct": "http://purl.org/dc/terms/",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "ex": "https://example.com/ogcapi/",
+      "job": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/",
+      "proc": "https://example.com/ogcapi/processes/",
+      "input": "https://example.com/ogcapi/processes/echo/inputs/",
+      "output": "https://example.com/ogcapi/processes/echo/outputs/",
+      "profile": "https://example.com/def/profile/"
+    },
+    "https://openprovenance.org/prov-jsonld/context.jsonld"
+  ],
+  "@graph": [
+    {
+      "@type": "Agent",
+      "@id": "ex:agents/alice",
+      "type": [
+        "prov:Person"
+      ],
+      "label": [
+        {
+          "@value": "Alice (user agent that submitted the job)"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "ex:agents/server",
+      "type": [
+        "prov:SoftwareAgent"
+      ],
+      "label": [
+        {
+          "@value": "Example OGC API - Processes server"
+        }
+      ]
+    },
+    {
+      "@type": "Agent",
+      "@id": "ex:agents/engine",
+      "type": [
+        "prov:SoftwareAgent",
+        "wfprov:WorkflowEngine"
+      ],
+      "label": [
+        {
+          "@value": "Example workflow engine"
+        }
+      ]
+    },
+    {
+      "@type": "Delegation",
+      "delegate": "ex:agents/server",
+      "responsible": "ex:agents/alice"
+    },
+    {
+      "@type": "Delegation",
+      "delegate": "ex:agents/engine",
+      "responsible": "ex:agents/server"
+    },
+    {
+      "@type": "Entity",
+      "@id": "profile:raster",
+      "role": [
+        {
+          "@value": "http://www.opengis.net/def/glossary/term/Raster"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "profile:raster-cog",
+      "role": [
+        {
+          "@value": "http://www.opengis.net/def/glossary/term/Raster"
+        }
+      ]
+    },
+    {
+      "@type": "Specialization",
+      "specificEntity": "profile:raster-cog",
+      "generalEntity": "profile:raster"
+    },
+    {
+      "@type": "Entity",
+      "@id": "proc:echo",
+      "type": [
+        "wfdesc:Process"
+      ],
+      "label": [
+        {
+          "@value": "Process Description"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/ogcapi/processes/echo"
+        }
+      ],
+      "dct:conformsTo": [
+        {
+          "@value": "profile:raster",
+          "@type": "xsd:QName"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "profile:status",
+      "role": [
+        {
+          "@value": "http://www.opengis.net/def/glossary/term/Status"
+        }
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:status",
+      "label": [
+        {
+          "@value": "Job Status"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10"
+        }
+      ],
+      "dct:conformsTo": [
+        {
+          "@value": "profile:status",
+          "@type": "xsd:QName"
+        }
+      ]
+    },
+    {
+      "@type": "Attribution",
+      "entity": "job:status",
+      "agent": "ex:agents/alice"
+    },
+    {
+      "@type": "Activity",
+      "@id": "job:run",
+      "type": [
+        "wfprov:ProcessRun"
+      ],
+      "label": [
+        {
+          "@value": "Execution of the echo process"
+        }
+      ]
+    },
+    {
+      "@type": "Influence",
+      "influencee": "job:status",
+      "influencer": "job:run"
+    },
+    {
+      "@type": "Association",
+      "activity": "job:run",
+      "agent": "ex:agents/engine",
+      "plan": "proc:echo"
+    },
+    {
+      "@type": "Association",
+      "activity": "job:run",
+      "agent": "ex:agents/alice"
+    },
+    {
+      "@type": "Start",
+      "activity": "job:run",
+      "trigger": "job:status",
+      "time": "2026-01-15T16:46:10+00:00"
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:inputs/message",
+      "label": [
+        {
+          "@value": "Input 'message'"
+        }
+      ],
+      "value": [
+        {
+          "@value": "hello"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact"
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "job:run",
+      "entity": "job:inputs/message",
+      "role": [
+        "input:message"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:inputs/image",
+      "label": [
+        {
+          "@value": "Input 'image'"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/data/image.tif"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "dct:conformsTo": [
+        {
+          "@value": "profile:raster",
+          "@type": "xsd:QName"
+        }
+      ]
+    },
+    {
+      "@type": "Usage",
+      "activity": "job:run",
+      "entity": "job:inputs/image",
+      "role": [
+        "input:image"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:results/output",
+      "label": [
+        {
+          "@value": "Result 'output'"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ],
+      "dct:conformsTo": [
+        {
+          "@value": "profile:raster-cog",
+          "@type": "xsd:QName"
+        }
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "job:results/output",
+      "activity": "job:run",
+      "time": "2026-01-15T16:46:12+00:00",
+      "role": [
+        "output:output"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:results/images",
+      "label": [
+        {
+          "@value": "Result 'images'"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact",
+        "prov:Collection"
+      ]
+    },
+    {
+      "@type": "Generation",
+      "entity": "job:results/images",
+      "activity": "job:run",
+      "time": "2026-01-15T16:46:12+00:00",
+      "role": [
+        "output:images"
+      ]
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:results/images/0",
+      "label": [
+        {
+          "@value": "Result 'images' item 0"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ]
+    },
+    {
+      "@type": "Membership",
+      "collection": "job:results/images",
+      "entity": "job:results/images/0"
+    },
+    {
+      "@type": "Entity",
+      "@id": "job:results/images/1",
+      "label": [
+        {
+          "@value": "Result 'images' item 1"
+        }
+      ],
+      "location": [
+        {
+          "@value": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1"
+        }
+      ],
+      "type": [
+        "wfprov:Artifact",
+        "wf4ever:File"
+      ]
+    },
+    {
+      "@type": "Membership",
+      "collection": "job:results/images",
+      "entity": "job:results/images/1"
+    },
+    {
+      "@type": "End",
+      "activity": "job:run",
+      "trigger": "job:results/output",
+      "time": "2026-01-15T16:46:13+00:00"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+description: >-
+  Job provenance returned by GET /jobs/{jobId}/prov, in any negotiated PROV serialization.
+  The serialization-specific profiles are listed in `hasFormat`.
+anyOf:
+  - type: object
+  - type: string

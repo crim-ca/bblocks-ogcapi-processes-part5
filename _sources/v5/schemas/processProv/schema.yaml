@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Process description as PROV process entity
+description: >-
+  Part 1 process description, interpreted as the PROV process entity of the Part 5 job provenance.
+allOf:
+  - $ref: bblocks://ogc.api.processes.v1.schemas.process

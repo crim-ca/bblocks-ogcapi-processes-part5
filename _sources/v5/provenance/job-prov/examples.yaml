@@ -1,0 +1,6 @@
+$schema: https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/refs/heads/master/ogc/bblocks/schemas/examples.schema.yaml
+examples:
+  - title: Conformant job provenance (validated against the Part 5 SHACL shapes)
+    snippets:
+      - language: turtle
+        ref: examples/job_prov.ttl

@@ -1,0 +1,9 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "prov": "http://www.w3.org/ns/prov#",
+    "oap5": "https://www.opengis.net/def/ogcapi-processes-5/1.0/prov/",
+    "started": {"@id": "prov:startedAtTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"},
+    "finished": {"@id": "prov:endedAtTime", "@type": "http://www.w3.org/2001/XMLSchema#dateTime"}
+  }
+}

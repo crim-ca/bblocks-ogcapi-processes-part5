@@ -1,0 +1,117 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix input: <https://example.com/ogcapi/processes/echo/inputs/> .
+@prefix job: <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/> .
+@prefix output: <https://example.com/ogcapi/processes/echo/outputs/> .
+@prefix proc: <https://example.com/ogcapi/processes/> .
+@prefix profile: <https://example.com/def/profile/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wf4ever: <http://purl.org/wf4ever/wf4ever#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> a wfprov:Artifact,
+        prov:Collection,
+        prov:Entity ;
+    rdfs:label "Result 'images'" ;
+    prov:hadMember <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0>,
+        <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity job:run ;
+            prov:atTime "2026-01-15T16:46:12+00:00"^^xsd:dateTime ;
+            prov:hadRole output:images ] .
+
+profile:raster-cog a prov:Entity ;
+    prov:role "http://www.opengis.net/def/glossary/term/Raster" ;
+    prov:specializationOf profile:raster .
+
+profile:status a prov:Entity ;
+    prov:role "http://www.opengis.net/def/glossary/term/Status" .
+
+<https://example.com/ogcapi/agents/engine> a wfprov:WorkflowEngine,
+        prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Example workflow engine" ;
+    prov:actedOnBehalfOf <https://example.com/ogcapi/agents/server> .
+
+<https://example.com/ogcapi/agents/server> a prov:Agent,
+        prov:SoftwareAgent ;
+    rdfs:label "Example OGC API - Processes server" ;
+    prov:actedOnBehalfOf <https://example.com/ogcapi/agents/alice> .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    rdfs:label "Input 'image'" ;
+    dct:conformsTo profile:raster ;
+    prov:atLocation "https://example.com/data/image.tif" .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> a wfprov:Artifact,
+        prov:Entity ;
+    rdfs:label "Input 'message'" ;
+    prov:value "hello" .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    rdfs:label "Result 'images' item 0" ;
+    prov:atLocation "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0" .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    rdfs:label "Result 'images' item 1" ;
+    prov:atLocation "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1" .
+
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> a wf4ever:File,
+        wfprov:Artifact,
+        prov:Entity ;
+    rdfs:label "Result 'output'" ;
+    dct:conformsTo profile:raster-cog ;
+    prov:atLocation "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output" ;
+    prov:qualifiedGeneration [ a prov:Generation ;
+            prov:activity job:run ;
+            prov:atTime "2026-01-15T16:46:12+00:00"^^xsd:dateTime ;
+            prov:hadRole output:output ] .
+
+job:status a prov:Entity ;
+    rdfs:label "Job Status" ;
+    dct:conformsTo profile:status ;
+    prov:atLocation "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10" ;
+    prov:wasAttributedTo <https://example.com/ogcapi/agents/alice> ;
+    prov:wasInfluencedBy job:run .
+
+proc:echo a wfdesc:Process,
+        prov:Entity ;
+    rdfs:label "Process Description" ;
+    dct:conformsTo profile:raster ;
+    prov:atLocation "https://example.com/ogcapi/processes/echo" .
+
+profile:raster a prov:Entity ;
+    prov:role "http://www.opengis.net/def/glossary/term/Raster" .
+
+<https://example.com/ogcapi/agents/alice> a prov:Agent,
+        prov:Person ;
+    rdfs:label "Alice (user agent that submitted the job)" .
+
+job:run a wfprov:ProcessRun,
+        prov:Activity ;
+    rdfs:label "Execution of the echo process" ;
+    prov:qualifiedAssociation [ a prov:Association ;
+            prov:agent <https://example.com/ogcapi/agents/engine> ;
+            prov:hadPlan proc:echo ] ;
+    prov:qualifiedEnd [ a prov:End ;
+            prov:atTime "2026-01-15T16:46:13+00:00"^^xsd:dateTime ;
+            prov:entity <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> ] ;
+    prov:qualifiedStart [ a prov:Start ;
+            prov:atTime "2026-01-15T16:46:10+00:00"^^xsd:dateTime ;
+            prov:entity job:status ] ;
+    prov:qualifiedUsage [ a prov:Usage ;
+            prov:entity <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> ;
+            prov:hadRole input:image ],
+        [ a prov:Usage ;
+            prov:entity <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> ;
+            prov:hadRole input:message ] ;
+    prov:wasAssociatedWith <https://example.com/ogcapi/agents/alice> .
+

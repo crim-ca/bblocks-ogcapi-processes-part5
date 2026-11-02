@@ -1,0 +1,42 @@
+{
+  "name": "OGC API - Processes - Part 5: Provenance",
+  "abstract": "API definition of GET /jobs/{jobId}/prov and its PROV representations",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-05-01",
+  "itemClass": "api",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "provenance",
+    "part5",
+    "api"
+  ],
+  "highlighted": true,
+  "dependsOn": [
+    "ogc.api.processes.v5.responses.jobProv",
+    "ogc.api.processes.v5.responses.provMissing",
+    "ogc.api.processes.v5.responses.provUnsupportedFormat",
+    "ogc.api.processes.v5.schemas.jobStatus",
+    "ogc.api.processes.v5.schemas.jobActivity",
+    "ogc.api.processes.v5.schemas.processProv",
+    "ogc.api.processes.v1.api",
+    "ogc.api.processes.v1.paths.Job",
+    "ogc.api.processes.v1.schemas.statusInfo",
+    "ogc.api.processes.v1.schemas.process",
+    "ogc.api.processes.v1.schemas.exception",
+    "ogc.api.processes.v1.responses.Status",
+    "ogc.api.processes.v1.responses.NotFound",
+    "ogc.api.processes.v1.parameters.jobId",
+    "ogc.api.processes.v1.responses.ServerError",
+    "ogc.api.processes.v5.provenance.ontology"
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "prefix": {
+    "wfprov": "http://purl.org/wf4ever/wfprov#",
+    "wfdesc": "http://purl.org/wf4ever/wfdesc#",
+    "wf4ever": "http://purl.org/wf4ever/wf4ever#",
+    "dct": "http://purl.org/dc/terms/",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "ex": "https://example.com/ogcapi/",
+    "job": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/",
+    "proc": "https://example.com/ogcapi/processes/",
+    "input": "https://example.com/ogcapi/processes/echo/inputs/",
+    "output": "https://example.com/ogcapi/processes/echo/outputs/",
+    "profile": "https://example.com/def/profile/"
+  },
+  "agent": {
+    "ex:agents/alice": {
+      "prov:type": {
+        "$": "prov:Person",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Alice (user agent that submitted the job)"
+    },
+    "ex:agents/server": {
+      "prov:type": {
+        "$": "prov:SoftwareAgent",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Example OGC API - Processes server"
+    },
+    "ex:agents/engine": {
+      "prov:type": [
+        {
+          "$": "prov:SoftwareAgent",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "wfprov:WorkflowEngine",
+          "type": "xsd:QName"
+        }
+      ],
+      "prov:label": "Example workflow engine"
+    }
+  },
+  "actedOnBehalfOf": {
+    "_:id1": {
+      "prov:delegate": "ex:agents/server",
+      "prov:responsible": "ex:agents/alice"
+    },
+    "_:id2": {
+      "prov:delegate": "ex:agents/engine",
+      "prov:responsible": "ex:agents/server"
+    }
+  },
+  "entity": {
+    "profile:raster": {
+      "prov:role": "http://www.opengis.net/def/glossary/term/Raster"
+    },
+    "profile:raster-cog": {
+      "prov:role": "http://www.opengis.net/def/glossary/term/Raster"
+    },
+    "proc:echo": {
+      "prov:type": {
+        "$": "wfdesc:Process",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Process Description",
+      "prov:location": "https://example.com/ogcapi/processes/echo",
+      "dct:conformsTo": {
+        "$": "profile:raster",
+        "type": "xsd:QName"
+      }
+    },
+    "profile:status": {
+      "prov:role": "http://www.opengis.net/def/glossary/term/Status"
+    },
+    "job:status": {
+      "prov:label": "Job Status",
+      "prov:location": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10",
+      "dct:conformsTo": {
+        "$": "profile:status",
+        "type": "xsd:QName"
+      }
+    },
+    "job:inputs/message": {
+      "prov:label": "Input 'message'",
+      "prov:value": "hello",
+      "prov:type": {
+        "$": "wfprov:Artifact",
+        "type": "xsd:QName"
+      }
+    },
+    "job:inputs/image": {
+      "prov:label": "Input 'image'",
+      "prov:location": "https://example.com/data/image.tif",
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "xsd:QName"
+        }
+      ],
+      "dct:conformsTo": {
+        "$": "profile:raster",
+        "type": "xsd:QName"
+      }
+    },
+    "job:results/output": {
+      "prov:label": "Result 'output'",
+      "prov:location": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output",
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "xsd:QName"
+        }
+      ],
+      "dct:conformsTo": {
+        "$": "profile:raster-cog",
+        "type": "xsd:QName"
+      }
+    },
+    "job:results/images": {
+      "prov:label": "Result 'images'",
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "prov:Collection",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "job:results/images/0": {
+      "prov:label": "Result 'images' item 0",
+      "prov:location": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0",
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "xsd:QName"
+        }
+      ]
+    },
+    "job:results/images/1": {
+      "prov:label": "Result 'images' item 1",
+      "prov:location": "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1",
+      "prov:type": [
+        {
+          "$": "wfprov:Artifact",
+          "type": "xsd:QName"
+        },
+        {
+          "$": "wf4ever:File",
+          "type": "xsd:QName"
+        }
+      ]
+    }
+  },
+  "specializationOf": {
+    "_:id3": {
+      "prov:specificEntity": "profile:raster-cog",
+      "prov:generalEntity": "profile:raster"
+    }
+  },
+  "wasAttributedTo": {
+    "_:id4": {
+      "prov:entity": "job:status",
+      "prov:agent": "ex:agents/alice"
+    }
+  },
+  "activity": {
+    "job:run": {
+      "prov:type": {
+        "$": "wfprov:ProcessRun",
+        "type": "xsd:QName"
+      },
+      "prov:label": "Execution of the echo process"
+    }
+  },
+  "wasInfluencedBy": {
+    "_:id5": {
+      "prov:influencee": "job:status",
+      "prov:influencer": "job:run"
+    }
+  },
+  "wasAssociatedWith": {
+    "_:id6": {
+      "prov:activity": "job:run",
+      "prov:agent": "ex:agents/engine",
+      "prov:plan": "proc:echo"
+    },
+    "_:id7": {
+      "prov:activity": "job:run",
+      "prov:agent": "ex:agents/alice"
+    }
+  },
+  "wasStartedBy": {
+    "_:id8": {
+      "prov:activity": "job:run",
+      "prov:trigger": "job:status",
+      "prov:time": "2026-01-15T16:46:10+00:00"
+    }
+  },
+  "used": {
+    "_:id9": {
+      "prov:activity": "job:run",
+      "prov:entity": "job:inputs/message",
+      "prov:role": {
+        "$": "input:message",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id10": {
+      "prov:activity": "job:run",
+      "prov:entity": "job:inputs/image",
+      "prov:role": {
+        "$": "input:image",
+        "type": "xsd:QName"
+      }
+    }
+  },
+  "wasGeneratedBy": {
+    "_:id11": {
+      "prov:entity": "job:results/output",
+      "prov:activity": "job:run",
+      "prov:time": "2026-01-15T16:46:12+00:00",
+      "prov:role": {
+        "$": "output:output",
+        "type": "xsd:QName"
+      }
+    },
+    "_:id12": {
+      "prov:entity": "job:results/images",
+      "prov:activity": "job:run",
+      "prov:time": "2026-01-15T16:46:12+00:00",
+      "prov:role": {
+        "$": "output:images",
+        "type": "xsd:QName"
+      }
+    }
+  },
+  "hadMember": {
+    "_:id13": {
+      "prov:collection": "job:results/images",
+      "prov:entity": "job:results/images/0"
+    },
+    "_:id14": {
+      "prov:collection": "job:results/images",
+      "prov:entity": "job:results/images/1"
+    }
+  },
+  "wasEndedBy": {
+    "_:id15": {
+      "prov:activity": "job:run",
+      "prov:trigger": "job:results/output",
+      "prov:time": "2026-01-15T16:46:13+00:00"
+    }
+  }
+}

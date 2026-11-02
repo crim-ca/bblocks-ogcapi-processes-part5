@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:wfprov="http://purl.org/wf4ever/wfprov#" xmlns:wfdesc="http://purl.org/wf4ever/wfdesc#" xmlns:wf4ever="http://purl.org/wf4ever/wf4ever#" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:ex="https://example.com/ogcapi/" xmlns:job="https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/" xmlns:proc="https://example.com/ogcapi/processes/" xmlns:input="https://example.com/ogcapi/processes/echo/inputs/" xmlns:output="https://example.com/ogcapi/processes/echo/outputs/" xmlns:profile="https://example.com/def/profile/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:person prov:id="ex:agents/alice">
+    <prov:label>Alice (user agent that submitted the job)</prov:label>
+  </prov:person>
+  <prov:softwareAgent prov:id="ex:agents/server">
+    <prov:label>Example OGC API - Processes server</prov:label>
+  </prov:softwareAgent>
+  <prov:softwareAgent prov:id="ex:agents/engine">
+    <prov:label>Example workflow engine</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:WorkflowEngine</prov:type>
+  </prov:softwareAgent>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="ex:agents/server"/>
+    <prov:responsible prov:ref="ex:agents/alice"/>
+  </prov:actedOnBehalfOf>
+  <prov:actedOnBehalfOf>
+    <prov:delegate prov:ref="ex:agents/engine"/>
+    <prov:responsible prov:ref="ex:agents/server"/>
+  </prov:actedOnBehalfOf>
+  <prov:entity prov:id="profile:raster">
+    <prov:role>http://www.opengis.net/def/glossary/term/Raster</prov:role>
+  </prov:entity>
+  <prov:entity prov:id="profile:raster-cog">
+    <prov:role>http://www.opengis.net/def/glossary/term/Raster</prov:role>
+  </prov:entity>
+  <prov:specializationOf>
+    <prov:specificEntity prov:ref="profile:raster-cog"/>
+    <prov:generalEntity prov:ref="profile:raster"/>
+  </prov:specializationOf>
+  <prov:entity prov:id="proc:echo">
+    <prov:label>Process Description</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/ogcapi/processes/echo</prov:location>
+    <prov:type xsi:type="xsd:QName">wfdesc:Process</prov:type>
+    <dct:conformsTo xsi:type="xsd:QName">profile:raster</dct:conformsTo>
+  </prov:entity>
+  <prov:entity prov:id="profile:status">
+    <prov:role>http://www.opengis.net/def/glossary/term/Status</prov:role>
+  </prov:entity>
+  <prov:entity prov:id="job:status">
+    <prov:label>Job Status</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10</prov:location>
+    <dct:conformsTo xsi:type="xsd:QName">profile:status</dct:conformsTo>
+  </prov:entity>
+  <prov:wasAttributedTo>
+    <prov:entity prov:ref="job:status"/>
+    <prov:agent prov:ref="ex:agents/alice"/>
+  </prov:wasAttributedTo>
+  <prov:activity prov:id="job:run">
+    <prov:label>Execution of the echo process</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:ProcessRun</prov:type>
+  </prov:activity>
+  <prov:wasInfluencedBy>
+    <prov:influencee prov:ref="job:status"/>
+    <prov:influencer prov:ref="job:run"/>
+  </prov:wasInfluencedBy>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="job:run"/>
+    <prov:agent prov:ref="ex:agents/engine"/>
+    <prov:plan prov:ref="proc:echo"/>
+  </prov:wasAssociatedWith>
+  <prov:wasAssociatedWith>
+    <prov:activity prov:ref="job:run"/>
+    <prov:agent prov:ref="ex:agents/alice"/>
+  </prov:wasAssociatedWith>
+  <prov:wasStartedBy>
+    <prov:activity prov:ref="job:run"/>
+    <prov:trigger prov:ref="job:status"/>
+    <prov:time>2026-01-15T16:46:10+00:00</prov:time>
+  </prov:wasStartedBy>
+  <prov:entity prov:id="job:inputs/message">
+    <prov:label>Input 'message'</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <prov:value xsi:type="xsd:string">hello</prov:value>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="job:run"/>
+    <prov:entity prov:ref="job:inputs/message"/>
+    <prov:role xsi:type="xsd:QName">input:message</prov:role>
+  </prov:used>
+  <prov:entity prov:id="job:inputs/image">
+    <prov:label>Input 'image'</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/data/image.tif</prov:location>
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <dct:conformsTo xsi:type="xsd:QName">profile:raster</dct:conformsTo>
+  </prov:entity>
+  <prov:used>
+    <prov:activity prov:ref="job:run"/>
+    <prov:entity prov:ref="job:inputs/image"/>
+    <prov:role xsi:type="xsd:QName">input:image</prov:role>
+  </prov:used>
+  <prov:entity prov:id="job:results/output">
+    <prov:label>Result 'output'</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output</prov:location>
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+    <dct:conformsTo xsi:type="xsd:QName">profile:raster-cog</dct:conformsTo>
+  </prov:entity>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="job:results/output"/>
+    <prov:activity prov:ref="job:run"/>
+    <prov:time>2026-01-15T16:46:12+00:00</prov:time>
+    <prov:role xsi:type="xsd:QName">output:output</prov:role>
+  </prov:wasGeneratedBy>
+  <prov:collection prov:id="job:results/images">
+    <prov:label>Result 'images'</prov:label>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+  </prov:collection>
+  <prov:wasGeneratedBy>
+    <prov:entity prov:ref="job:results/images"/>
+    <prov:activity prov:ref="job:run"/>
+    <prov:time>2026-01-15T16:46:12+00:00</prov:time>
+    <prov:role xsi:type="xsd:QName">output:images</prov:role>
+  </prov:wasGeneratedBy>
+  <prov:entity prov:id="job:results/images/0">
+    <prov:label>Result 'images' item 0</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0</prov:location>
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+  </prov:entity>
+  <prov:hadMember>
+    <prov:collection prov:ref="job:results/images"/>
+    <prov:entity prov:ref="job:results/images/0"/>
+  </prov:hadMember>
+  <prov:entity prov:id="job:results/images/1">
+    <prov:label>Result 'images' item 1</prov:label>
+    <prov:location xsi:type="xsd:string">https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1</prov:location>
+    <prov:type xsi:type="xsd:QName">wf4ever:File</prov:type>
+    <prov:type xsi:type="xsd:QName">wfprov:Artifact</prov:type>
+  </prov:entity>
+  <prov:hadMember>
+    <prov:collection prov:ref="job:results/images"/>
+    <prov:entity prov:ref="job:results/images/1"/>
+  </prov:hadMember>
+  <prov:wasEndedBy>
+    <prov:activity prov:ref="job:run"/>
+    <prov:trigger prov:ref="job:results/output"/>
+    <prov:time>2026-01-15T16:46:13+00:00</prov:time>
+  </prov:wasEndedBy>
+</prov:document>

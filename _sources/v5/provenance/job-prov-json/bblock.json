@@ -1,0 +1,31 @@
+{
+  "name": "Job Provenance - PROV-JSON",
+  "abstract": "PROV-JSON (application/provenance+json) representation of the Job Provenance Response. Default and mandatory format of GET /jobs/{jobId}/prov.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-11-02",
+  "itemClass": "schema",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "highlighted": true,
+  "isProfileOf": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-json"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-json"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "provenance",
+    "prov",
+    "json",
+    "part5"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Provenance ontology (Part 1 to PROV mappings)",
+  "abstract": "Ontology relating the OGC API - Processes Part 1 concepts (process, job, input, result) to the PROV Entity, Activity and Agent concepts, as characterized by Part 5.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-05-01",
+  "itemClass": "model",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "dependsOn": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-base",
+    "bblocks://ogc.api.processes.v1.schemas.statusInfo",
+    "bblocks://ogc.api.processes.v1.schemas.process"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    },
+    {
+      "title": "PROV-O: The PROV Ontology",
+      "link": "https://www.w3.org/TR/prov-o/"
+    }
+  ],
+  "tags": ["ogc", "processes", "provenance", "prov", "ontology", "part5"]
+}

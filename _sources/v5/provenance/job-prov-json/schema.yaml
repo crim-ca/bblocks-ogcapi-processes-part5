@@ -1,0 +1,16 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Job Provenance - PROV-JSON
+description: >-
+  PROV-JSON document returned by GET /jobs/{jobId}/prov. It declares the wf4ever, wfprov and wfdesc
+  namespaces (REQ_prov-namespaces) and contains at least one entity and one activity.
+type: object
+allOf:
+  - $ref: bblocks://ogc.ogc-utils.prov.w3c-prov-json
+  - required: [prefix, entity, activity]
+    properties:
+      prefix:
+        type: object
+        required: [wfprov, wfdesc, wf4ever]
+        properties:
+          prov:
+            const: http://www.w3.org/ns/prov#

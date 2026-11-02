@@ -1,0 +1,4 @@
+additionalSteps:
+  - type: jq
+    code: |
+      . + {"@type": "oap5:JobStatusEntity"}

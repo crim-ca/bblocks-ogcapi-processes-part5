@@ -1,0 +1,6 @@
+description: Exception returned when the negotiated provenance format is not supported.
+allOf:
+  - $ref: bblocks://ogc.api.processes.v1.schemas.exception
+  - properties:
+      type:
+        const: https://www.opengis.net/def/exceptions/ogcapi-processes-5/1.0/prov-unsupported-format

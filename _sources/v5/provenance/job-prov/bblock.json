@@ -1,0 +1,39 @@
+{
+  "name": "Job Provenance (PROV model for GET /jobs/{jobId}/prov)",
+  "abstract": "RDF model and SHACL shapes validating the Part 5 job provenance requirements, independently of the serialization. A profile of the W3C PROV Representation Base.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-05-01",
+  "itemClass": "model",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "highlighted": true,
+  "isProfileOf": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-base"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.api.processes.v1.schemas.statusInfo",
+    "bblocks://ogc.api.processes.v1.schemas.process",
+    "bblocks://ogc.api.processes.v5.schemas.jobStatus",
+    "bblocks://ogc.api.processes.v5.schemas.processProv",
+    "bblocks://ogc.api.processes.v5.schemas.jobActivity",
+    "bblocks://ogc.api.processes.v5.responses.jobProv"
+  ],
+  "shaclShapes": [
+    "shapes.shacl"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "provenance",
+    "prov",
+    "shacl",
+    "part5"
+  ]
+}

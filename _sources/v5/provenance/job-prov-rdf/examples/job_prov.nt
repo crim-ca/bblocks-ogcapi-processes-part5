@@ -1,0 +1,96 @@
+<https://example.com/ogcapi/agents/alice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Person> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://purl.org/dc/terms/conformsTo> <https://example.com/def/profile/raster> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wf4ever#File> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> <http://www.w3.org/ns/prov#atLocation> "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> <http://www.w3.org/2000/01/rdf-schema#label> "Input 'message'" .
+<https://example.com/ogcapi/agents/engine> <http://www.w3.org/ns/prov#actedOnBehalfOf> <https://example.com/ogcapi/agents/server> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/agents/engine> <http://www.w3.org/2000/01/rdf-schema#label> "Example workflow engine" .
+_:N81342e895af043429a80c6ed80466d7f <http://www.w3.org/ns/prov#agent> <https://example.com/ogcapi/agents/engine> .
+_:N26617c2490804757abf29253d0441c4a <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/ns/prov#qualifiedGeneration> _:N26617c2490804757abf29253d0441c4a .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/ns/prov#qualifiedGeneration> _:Ncfcfc0bd373a4cb0a94ecc5b1c11e9b6 .
+_:N57451c9598374fda9b3dec12684ad62f <http://www.w3.org/ns/prov#entity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> .
+<https://example.com/ogcapi/agents/engine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<https://example.com/ogcapi/agents/server> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/agents/engine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#SoftwareAgent> .
+<https://example.com/ogcapi/agents/server> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#SoftwareAgent> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://www.w3.org/ns/prov#atLocation> "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10" .
+_:N1728ba4bfd164680848acf83c8a91041 <http://www.w3.org/ns/prov#entity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> <http://www.w3.org/2000/01/rdf-schema#label> "Result 'images' item 0" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://www.w3.org/ns/prov#atLocation> "https://example.com/data/image.tif" .
+_:N1728ba4bfd164680848acf83c8a91041 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<https://example.com/ogcapi/processes/echo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+_:N6007043c3e604e9784318ef5b8835a29 <http://www.w3.org/ns/prov#entity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> .
+_:Ne2fbfeabcbf943f09ef05a8063fe47cb <http://www.w3.org/ns/prov#entity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> .
+_:N81342e895af043429a80c6ed80466d7f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Association> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#qualifiedUsage> _:N1728ba4bfd164680848acf83c8a91041 .
+<https://example.com/def/profile/raster> <http://www.w3.org/ns/prov#role> "http://www.opengis.net/def/glossary/term/Raster" .
+_:N6007043c3e604e9784318ef5b8835a29 <http://www.w3.org/ns/prov#atTime> "2026-01-15T16:46:13+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://example.com/ogcapi/processes/echo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfdesc#Process> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/2000/01/rdf-schema#label> "Result 'output'" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#qualifiedStart> _:N57451c9598374fda9b3dec12684ad62f .
+_:Ne2fbfeabcbf943f09ef05a8063fe47cb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage> .
+<https://example.com/def/profile/raster-cog> <http://www.w3.org/ns/prov#specializationOf> <https://example.com/def/profile/raster> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/agents/server> <http://www.w3.org/ns/prov#actedOnBehalfOf> <https://example.com/ogcapi/agents/alice> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/ns/prov#hadMember> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://www.w3.org/ns/prov#wasInfluencedBy> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> .
+_:N6007043c3e604e9784318ef5b8835a29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#End> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://www.w3.org/2000/01/rdf-schema#label> "Input 'image'" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/ns/prov#atLocation> "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output" .
+_:N57451c9598374fda9b3dec12684ad62f <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Start> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://www.w3.org/ns/prov#wasAttributedTo> <https://example.com/ogcapi/agents/alice> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://www.w3.org/2000/01/rdf-schema#label> "Job Status" .
+_:Ncfcfc0bd373a4cb0a94ecc5b1c11e9b6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation> .
+_:N57451c9598374fda9b3dec12684ad62f <http://www.w3.org/ns/prov#atTime> "2026-01-15T16:46:10+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:N1728ba4bfd164680848acf83c8a91041 <http://www.w3.org/ns/prov#hadRole> <https://example.com/ogcapi/processes/echo/inputs/image> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://purl.org/dc/terms/conformsTo> <https://example.com/def/profile/raster-cog> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> <http://www.w3.org/ns/prov#value> "hello" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<https://example.com/ogcapi/processes/echo> <http://purl.org/dc/terms/conformsTo> <https://example.com/def/profile/raster> .
+_:N26617c2490804757abf29253d0441c4a <http://www.w3.org/ns/prov#hadRole> <https://example.com/ogcapi/processes/echo/outputs/images> .
+<https://example.com/def/profile/raster-cog> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/processes/echo> <http://www.w3.org/ns/prov#atLocation> "https://example.com/ogcapi/processes/echo" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#qualifiedAssociation> _:N81342e895af043429a80c6ed80466d7f .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wf4ever#File> .
+_:Ncfcfc0bd373a4cb0a94ecc5b1c11e9b6 <http://www.w3.org/ns/prov#activity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/def/profile/raster> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#wasAssociatedWith> <https://example.com/ogcapi/agents/alice> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/image> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wf4ever#File> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/2000/01/rdf-schema#label> "Result 'images'" .
+_:N26617c2490804757abf29253d0441c4a <http://www.w3.org/ns/prov#activity> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> <http://www.w3.org/2000/01/rdf-schema#label> "Result 'images' item 1" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#qualifiedEnd> _:N6007043c3e604e9784318ef5b8835a29 .
+_:N81342e895af043429a80c6ed80466d7f <http://www.w3.org/ns/prov#hadPlan> <https://example.com/ogcapi/processes/echo> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://purl.org/dc/terms/conformsTo> <https://example.com/def/profile/status> .
+_:Ncfcfc0bd373a4cb0a94ecc5b1c11e9b6 <http://www.w3.org/ns/prov#atTime> "2026-01-15T16:46:12+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+_:Ne2fbfeabcbf943f09ef05a8063fe47cb <http://www.w3.org/ns/prov#hadRole> <https://example.com/ogcapi/processes/echo/inputs/message> .
+<https://example.com/def/profile/status> <http://www.w3.org/ns/prov#role> "http://www.opengis.net/def/glossary/term/Status" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/output> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/2000/01/rdf-schema#label> "Execution of the echo process" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Collection> .
+<https://example.com/ogcapi/processes/echo> <http://www.w3.org/2000/01/rdf-schema#label> "Process Description" .
+_:N26617c2490804757abf29253d0441c4a <http://www.w3.org/ns/prov#atTime> "2026-01-15T16:46:12+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images> <http://www.w3.org/ns/prov#hadMember> <https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> .
+<https://example.com/def/profile/raster-cog> <http://www.w3.org/ns/prov#role> "http://www.opengis.net/def/glossary/term/Raster" .
+_:Ncfcfc0bd373a4cb0a94ecc5b1c11e9b6 <http://www.w3.org/ns/prov#hadRole> <https://example.com/ogcapi/processes/echo/outputs/output> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/ns/prov#qualifiedUsage> _:Ne2fbfeabcbf943f09ef05a8063fe47cb .
+<https://example.com/ogcapi/agents/engine> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#WorkflowEngine> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/inputs/message> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/agents/server> <http://www.w3.org/2000/01/rdf-schema#label> "Example OGC API - Processes server" .
+<https://example.com/ogcapi/agents/alice> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Agent> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#Artifact> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0> <http://www.w3.org/ns/prov#atLocation> "https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/0" .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/run> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wfprov#ProcessRun> .
+<https://example.com/ogcapi/jobs/6c5c7dd0-0b5e-4c4c-9d1e-2a4d3e1f9a10/results/images/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://purl.org/wf4ever/wf4ever#File> .
+<https://example.com/def/profile/status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
+<https://example.com/ogcapi/agents/alice> <http://www.w3.org/2000/01/rdf-schema#label> "Alice (user agent that submitted the job)" .

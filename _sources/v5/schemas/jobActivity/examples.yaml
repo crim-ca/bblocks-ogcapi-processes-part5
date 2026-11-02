@@ -1,0 +1,6 @@
+$schema: https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/refs/heads/master/ogc/bblocks/schemas/examples.schema.yaml
+examples:
+  - title: Successful job status with the provenance link
+    snippets:
+      - language: json
+        ref: examples/status.json

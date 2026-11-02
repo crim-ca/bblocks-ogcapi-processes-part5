@@ -1,0 +1,42 @@
+{
+  "name": "Job Provenance Response",
+  "abstract": "Successful response of GET /jobs/{jobId}/prov. Base of all PROV representations (PROV-JSON, PROV-JSONLD, PROV-XML, PROV-N, PROV-O RDF), which are profiles of this response.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-11-02",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "isProfileOf": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-base"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-base",
+    "bblocks://ogc.api.processes.v1.schemas.statusInfo",
+    "bblocks://ogc.api.processes.v1.schemas.process",
+    "bblocks://ogc.api.processes.v5.schemas.jobStatus",
+    "bblocks://ogc.api.processes.v5.schemas.processProv",
+    "bblocks://ogc.api.processes.v5.schemas.jobActivity"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "response",
+    "part5",
+    "provenance",
+    "success"
+  ],
+  "itemClass": "response",
+  "hasFormat": [
+    "bblocks://ogc.api.processes.v5.provenance.job-prov-json",
+    "bblocks://ogc.api.processes.v5.provenance.job-prov-jsonld",
+    "bblocks://ogc.api.processes.v5.provenance.job-prov-xml",
+    "bblocks://ogc.api.processes.v5.provenance.job-prov-n",
+    "bblocks://ogc.api.processes.v5.provenance.job-prov-rdf"
+  ]
+}

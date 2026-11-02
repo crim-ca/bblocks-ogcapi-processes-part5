@@ -1,0 +1,10 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix wfdesc: <http://purl.org/wf4ever/wfdesc#> .
+@prefix wfprov: <http://purl.org/wf4ever/wfprov#> .
+@prefix ex: <https://example.com/ogcapi/> .
+
+# The job status entity lacks the mandatory prov:location (REQ_job-entity).
+ex:job1 a prov:Entity ;
+    prov:wasInfluencedBy ex:run .
+
+ex:run a prov:Activity, wfprov:ProcessRun .

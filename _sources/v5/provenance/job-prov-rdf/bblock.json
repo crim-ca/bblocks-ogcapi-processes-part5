@@ -1,0 +1,31 @@
+{
+  "name": "Job Provenance - PROV-O RDF",
+  "abstract": "PROV-O RDF representation of the Job Provenance Response, as Turtle (text/turtle) and N-Triples (application/n-triples).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-05-01T00:00:00Z",
+  "dateOfLastChange": "2026-11-02",
+  "itemClass": "model",
+  "register": "ogc-api-processes-part5",
+  "version": "0.1",
+  "highlighted": true,
+  "isProfileOf": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-rdf"
+  ],
+  "dependsOn": [
+    "bblocks://ogc.ogc-utils.prov.w3c-prov-rdf"
+  ],
+  "sources": [
+    {
+      "title": "OGC API - Processes - Part 5: Provenance",
+      "link": "https://docs.ogc.org/DRAFTS/26-038.html"
+    }
+  ],
+  "tags": [
+    "ogc",
+    "processes",
+    "provenance",
+    "prov",
+    "rdf",
+    "part5"
+  ]
+}

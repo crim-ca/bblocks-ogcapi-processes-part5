@@ -1,0 +1,23 @@
+name: OGC API - Processes - Part 5 Building Blocks
+abstract: |
+  Building blocks for OGC API - Processes - Part 5: Provenance (GET /jobs/{jobId}/prov)
+description: |
+  This repository contains building blocks for the OGC API - Processes - Part 5 provenance extension.
+  It is limited to the `/jobs/{jobId}/prov` endpoint and its PROV representations.
+
+  Building blocks include:
+  - API definition of the `/jobs/{jobId}/prov` path and its responses.
+  - A provenance ontology relating the Part 1 concepts (process, job, input, result)
+    to the PROV Entity, Activity and Agent concepts.
+  - A SHACL-validated job provenance model (REQ_job-prov and REQ_prov-content requirements).
+  - Representation profiles of the `bblocks-prov-jsonld-alt` PROV serializations
+    (PROV-JSON, PROV-JSONLD, PROV-XML, PROV-N, PROV-O Turtle and N-Triples).
+  - Semantic mappings of the Part 1 process and job JSON documents onto the PROV concepts.
+
+identifier-prefix: ogc.api.processes.
+
+imports:
+  - default
+  - https://geolabs.github.io/bblocks-ogcapi-processes/build/register.json
+  - https://ogcincubator.github.io/bblocks-prov-jsonld-alt/build/register.json
+  - https://ogcincubator.github.io/bblock-prov-schema/build/register.json

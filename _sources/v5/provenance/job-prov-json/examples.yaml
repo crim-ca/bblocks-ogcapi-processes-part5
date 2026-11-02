@@ -1,0 +1,6 @@
+$schema: https://raw.githubusercontent.com/opengeospatial/bblocks-postprocess/refs/heads/master/ogc/bblocks/schemas/examples.schema.yaml
+examples:
+  - title: Job Provenance of a process execution with literal, file and collection data
+    snippets:
+      - language: json
+        ref: examples/job_prov.json
